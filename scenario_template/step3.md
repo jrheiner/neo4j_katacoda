@@ -1,8 +1,6 @@
 # Heading for Step 3
 
-This is some text.
+https://www.katacoda.community/essentials/accessing-ports-ui.html#markdown-example
 
-Here's a single line of runnable code:
 
-`printf 'Cello, world!\n\n'`{{execute}}
-
+https://[[HOST_SUBDOMAIN]]-7474-[[KATACODA_HOST]].environments.katacoda.com

@@ -1,8 +1,8 @@
 {
-  "title": "New Scenario Template",
+  "title": "Neo4j case study",
   "description": "A simple scenario example.",
-  "difficulty": "Beginner",
-  "time": "3 minutes",
+  "difficulty": "Intermediate",
+  "time": "15 minutes",
   "details": {
     "steps": [
       {
@@ -24,10 +24,25 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "client": [
+        {
+          "file": "netflix_titles.csv",
+          "target": "~/data/"
+        }
+      ]
     }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "terminal",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Display NEO4J 7474",
+        "port": 7474
+      }
+    ]
   },
   "backend": {
     "imageid": "ubuntu:2004"
