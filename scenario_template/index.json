@@ -36,13 +36,7 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "showdashboard": true,
-    "dashboards": [
-      {
-        "name": "Display NEO4J 7474",
-        "port": 7474
-      }
-    ]
+    "showide": true
   },
   "backend": {
     "imageid": "ubuntu:2004"
