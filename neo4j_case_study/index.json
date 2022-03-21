@@ -1,6 +1,6 @@
 {
-  "title": "Neo4j case study",
-  "description": "A simple scenario example.",
+  "title": "Neo4j Case Study: Recommendation Engine",
+  "description": "Learn about Neo4j as graph database, designing a data model, and utilizing queries and graph algorithms as recommendation engine.",
   "difficulty": "Intermediate",
   "time": "15 minutes",
   "details": {
@@ -16,11 +16,24 @@
       {
         "title": "Step 3",
         "text": "step3.md"
+      },
+      {
+        "title": "Step 4",
+        "text": "step4.md"
+      },
+      {
+        "title": "Step 5",
+        "text": "step5.md"
+      },
+      {
+        "title": "Step 6",
+        "text": "step6.md"
       }
     ],
     "intro": {
       "text": "intro.md",
-      "code": "foreground.sh"
+      "code": "foreground.sh",
+      "courseData": "background.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -36,7 +49,8 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "showide": true
+    "showide": true,
+    "uieditorpath": "/root/data"
   },
   "backend": {
     "imageid": "ubuntu:2004"
