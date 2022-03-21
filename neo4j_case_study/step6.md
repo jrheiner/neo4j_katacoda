@@ -8,16 +8,19 @@ MATCH (the_matrix:Movie {name: "The Matrix"})-[:IN_GENRE]->(genre:Genre)<-[:IN_G
 {execute}
 
 ## Using Graph algorithms
+Adamic Adar is a measure used to compute the closeness of nodes based on their shared neighbors. https://neo4j.com/docs/graph-data-science/current/alpha-algorithms/adamic-adar/
+
 ```
-MATCH (a:Game {name: "Half-Life"} )-[*2]-(b:Game)
-WHERE a <> b
-WITH DISTINCT a,b
-RETURN a.name as title, b.name as recommendation, gds.alpha.linkprediction.adamicAdar(a, b) AS score
-ORDER BY score DESC
-LIMIT 10;
+MATCH (matrix:Movie {title: "The Matrix"} )-[*2]-(recommendation:Movie)
+WHERE matrix <> recommendation
+WITH DISTINCT matrix, recommendation
+RETURN matrix.title as Source, recommendation.title as Recommendation, gds.alpha.linkprediction.adamicAdar(a, b) AS closeness_score
+ORDER BY closeness_score DESC
+LIMIT 15;
 ```
 {execute}
-https://neo4j.com/docs/graph-data-science/current/alpha-algorithms/adamic-adar/
+
+
 
 
 ```

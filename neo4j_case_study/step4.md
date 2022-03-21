@@ -17,13 +17,12 @@ WITH movie, row
 UNWIND split(row.listed_in, ',') AS gen
 MERGE (genre:Genre {name: trim(gen)})
 MERGE (movie)-[:LISTED_IN]->(genre)
-```
+```{{execute}}
 
-{{execute}}
+
 To understand what the above command does in detail, let's look at the different parts:
 
 1. `LOAD CSV WITH HEADERS FROM 'file:///netflix_titles.csv' AS row` loads the CSV file from the /neo4j/data/ directory in the Docker container and parses the single lines. `AS row` saves the values of a single line in the variable `row` so we can access them in the rest of the query.
-
 
 2. `CREATE (movie:Movie {id: row.show_id, name: row.title})` creates a single node with "Movie" label and sets some properties. 
 
