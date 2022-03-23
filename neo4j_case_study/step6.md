@@ -8,8 +8,7 @@ MATCH (the_matrix:Movie {name: "The Matrix"})-[:LISTED_IN]->(genre:Genre)<-[:LIS
 WHERE the_matrix <> recommendation 
 WITH DISTINCT the_matrix, recommendation, collect(DISTINCT genre.name) as shared_genres, collect(DISTINCT actor.name) as shared_actors 
 RETURN the_matrix.name, recommendation.name, shared_genres, shared_actors;
-```
-{execute}
+```{{execute}}
 
 
 ## Using Graph algorithms
@@ -22,7 +21,7 @@ WITH DISTINCT matrix, recommendation
 RETURN matrix.name as Source, recommendation.name as Recommendation, gds.alpha.linkprediction.adamicAdar(matrix, recommendation) AS closeness_score
 ORDER BY closeness_score DESC
 LIMIT 15;
-```
-{execute}
+
+
 
 

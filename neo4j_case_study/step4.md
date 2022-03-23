@@ -4,7 +4,7 @@ To import the dataset into the database, execute the following command. Don't wo
 
 ```
 LOAD CSV WITH HEADERS FROM 'file:///netflix_titles.csv' AS row
-CREATE (movie:Movie {id: row.show_id, name: row.title, description: row.description, rating: row.rating})
+CREATE (movie:Movie {id: row.show_id, name: row.title})
 WITH movie, row
 UNWIND split(row.director, ',') AS dir
 MERGE (director:Person {name: trim(dir)})
