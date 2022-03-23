@@ -11,7 +11,10 @@ MATCH (n) RETURN count(labels(n)), labels(n);
 
 Get information about the movie "The Matrix":  
 ```
-MATCH (movie:Movie)-[relation]-(node) WHERE movie.name = "The Matrix" RETURN movie.name, relation, node.name;
+MATCH (movie:Movie)-[relationship]-(node) 
+WHERE movie.name = "The Matrix" 
+RETURN movie.name, relationship, node.name
+ORDER BY type(relationship);
 ```{{execute}}
 The output of this query is probably confusing in the terminal. This is because the output is a graph and it can not be visualized in the command line. Here is how the output looks using the Neo4j Browser User Interface:
 

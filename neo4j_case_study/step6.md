@@ -9,7 +9,7 @@ WHERE the_matrix <> recommendation
 WITH DISTINCT the_matrix, recommendation, collect(DISTINCT genre.name) as shared_genres
 RETURN the_matrix.name, recommendation.name, shared_genres
 ORDER BY size(shared_genres) DESC
-LIMIT 10;
+LIMIT 5;
 ```{{execute}}
 
 MATCH (the_matrix:Movie {name: "The Matrix"})-[:LISTED_IN]->(genre:Genre)<-[:LISTED_IN]-(recommendation:Movie)<-[:ACTED_IN]-(actor:Person)-[:ACTED_IN]->(the_matrix)
@@ -26,7 +26,7 @@ WHERE matrix <> recommendation
 WITH DISTINCT matrix, recommendation
 RETURN matrix.name as Source, recommendation.name as Recommendation, gds.alpha.linkprediction.adamicAdar(matrix, recommendation) AS closeness_score
 ORDER BY closeness_score DESC
-LIMIT 15;
+LIMIT 5;
 ```{{execute}}
 
 ```
@@ -35,5 +35,5 @@ WHERE matrix <> recommendation
 WITH DISTINCT matrix, recommendation
 RETURN matrix.name as Source, recommendation.name as Recommendation, gds.alpha.linkprediction.adamicAdar(matrix, recommendation) AS closeness_score
 ORDER BY closeness_score DESC
-LIMIT 15;
+LIMIT 5;
 ```{{execute}}
