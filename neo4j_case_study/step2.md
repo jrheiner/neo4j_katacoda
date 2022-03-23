@@ -5,7 +5,7 @@ One way to create a graph data model is to describe the domain in natural langua
 The dataset used in this scenario lists Netflix titles, including movie/show title, director, cast, and genre. 
 
 You can see all the included information by looking at the column headers. To do so, you can use the command:  
-`head -n 1 data/netflix_titles.csv'`{{execute}}  
+`head -n 1 data/netflix_titles.csv`{{execute}}  
 
 
 To view the whole file, you can open it in the Editor by using the command below:
