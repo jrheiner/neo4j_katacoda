@@ -2,39 +2,27 @@
 
 idea: same genre, same director or actors
 ## Movies with shared genre, director, and actors
+
 ```
-MATCH (the_matrix:Movie {name: "The Matrix"})-[:IN_GENRE]->(genre:Genre)<-[:IN_GENRE]-(recommendation:Movie)<-[:DIRECTED]-(director:Person)-[:DIRECTED]->(the_matrix) WHERE the_matrix <> recommendation WITH DISTINCT the_matrix, recommendation, director, collect(DISTINCT genre.name) as shared_genres RETURN the_matrix.name, recommendation.name, shared_genres, director.name;
+MATCH (the_matrix:Movie {name: "The Matrix"})-[:LISTED_IN]->(genre:Genre)<-[:LISTED_IN]-(recommendation:Movie)<-[:ACTED_IN]-(actor:Person)-[:ACTED_IN]->(the_matrix)
+WHERE the_matrix <> recommendation 
+WITH DISTINCT the_matrix, recommendation, collect(DISTINCT genre.name) as shared_genres, collect(DISTINCT actor.name) as shared_actors 
+RETURN the_matrix.name, recommendation.name, shared_genres, shared_actors;
 ```
 {execute}
+
 
 ## Using Graph algorithms
 Adamic Adar is a measure used to compute the closeness of nodes based on their shared neighbors. https://neo4j.com/docs/graph-data-science/current/alpha-algorithms/adamic-adar/
 
 ```
-MATCH (matrix:Movie {title: "The Matrix"} )-[*2]-(recommendation:Movie)
+MATCH (matrix:Movie {name: "The Matrix"} )-[*2]-(recommendation:Movie)
 WHERE matrix <> recommendation
 WITH DISTINCT matrix, recommendation
-RETURN matrix.title as Source, recommendation.title as Recommendation, gds.alpha.linkprediction.adamicAdar(a, b) AS closeness_score
+RETURN matrix.name as Source, recommendation.name as Recommendation, gds.alpha.linkprediction.adamicAdar(matrix, recommendation) AS closeness_score
 ORDER BY closeness_score DESC
 LIMIT 15;
 ```
 {execute}
 
 
-
-
-```
-MATCH (game:Game)-[:IN_GENRE]->(genre)
-WITH {item:id(genre), categories: collect(id(game))} AS userData
-WITH collect(userData) AS data
-CALL gds.alpha.similarity.overlap.stream({data: data})
-YIELD item1, item2, count1, count2, intersection, similarity
-RETURN gds.util.asNode(item1).name AS from, gds.util.asNode(item2).name AS to,
-       count1, count2, intersection, similarity
-ORDER BY similarity DESC;
-```
-{execute}
-https://neo4j.com/docs/graph-data-science/current/alpha-algorithms/overlap/
-
-
-idea: algorithm to determine node similarity

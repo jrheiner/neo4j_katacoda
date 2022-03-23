@@ -5,20 +5,29 @@ One way to create a graph data model is to describe the domain in natural langua
 The dataset used in this scenario lists Netflix titles, including movie/show title, director, cast, and genre. 
 
 You can see all the included information by looking at the column headers. To do so, you can use the command:  
-`tail data/netflix_titles.csv 1'`{{execute}}  
+`head -n 1 data/netflix_titles.csv'`{{execute}}  
 
+
+To view the whole file, you can open it in the Editor by using the command below:
+`data/netflix_titles.csv`{{open}}  
 To view the whole file, click on the "IDE" tab displayed at the top of the terminal. This will open an editor where you can explore the source file of the dataset. Note: The editor may load a few seconds.
 
-A possible domain description for this dataset is:
+Focussing on some of the available columns, a possible domain description for this dataset is:
 - A movie has an id, title, description, and rating.
 - A movie is directed by a director.
 - A movie has a cast consisting of multiple actors.
 - Actors and directors are persons with a name.
 - A movie is listed in multiple genres.
 
-Based on the domain description you can identify the following nodes, properties, and relationships.  
-- Nodes/Labels: Movie, Person (Actor and Director), Genre  
-- Properties: Movie (id, title, description, rating), Person (name), Genre (name)
+Based on the domain description you can identify the following nodes, properties, and relationships:  
+- *Nodes/Labels: 
+    - Movie
+    - Person (Actor and Director)
+    - Genre  
+- Properties: 
+    - Movie (id, title, description, rating)
+    - Person (name)
+    - Genre (name)
 - Relationships:
     - Person (Director) -[directed]-> Movie
     - Person (Actor) -[acted_in]-> Movie   

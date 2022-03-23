@@ -8,3 +8,6 @@ docker exec -it neo4j_games bash
 
 Start the Neo4j shell:
 `cypher-shell -u neo4j -p katacoda`{{execute}}
+
+
+Red console output `Connection refused`
