@@ -49,6 +49,7 @@
   },
   "environment": {
     "uilayout": "terminal",
+    "showdashboard": true,
     "dashboards": [{"name": "CSV File (GitHub)", "href": "https://raw.githubusercontent.com/jrheiner/neo4j_katacoda/main/neo4j_case_study/assets/netflix_titles.csv"}]
   },
   "backend": {
