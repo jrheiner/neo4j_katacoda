@@ -8,8 +8,7 @@ You can see all the included information by looking at the column headers. To do
 `head -n 1 data/netflix_titles.csv`{{execute}}  
 
 
-To view the whole file, you can open it in the Editor by using the command below:
-`data/netflix_titles.csv`{{open}}  
+To view the whole file, you can open it in the Editor by clicking here: `netflix_titles.csv`{{open}}  
 To view the whole file, click on the "IDE" tab displayed at the top of the terminal. This will open an editor where you can explore the source file of the dataset. Note: The editor may load a few seconds.
 
 Focussing on some of the available columns, a possible domain description for this dataset is:
@@ -20,9 +19,9 @@ Focussing on some of the available columns, a possible domain description for th
 - A movie is listed in multiple genres.
 
 Based on the domain description you can identify the following nodes, properties, and relationships:  
-- *Nodes/Labels: 
+- Nodes/Labels: 
     - Movie
-    - Person (Actor and Director)
+    - Person (Actors and Directors)
     - Genre  
 - Properties: 
     - Movie (id, title, description, rating)
