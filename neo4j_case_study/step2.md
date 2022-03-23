@@ -8,8 +8,8 @@ You can see all the included information by looking at the column headers. To do
 `head -n 1 data/netflix_titles.csv`{{execute}}  
 
 
-To view the whole file, you can open it in the Editor by clicking here: `netflix_titles.csv`{{open}}  
-To view the whole file, click on the "IDE" tab displayed at the top of the terminal. This will open an editor where you can explore the source file of the dataset. Note: The editor may load a few seconds.
+To view the whole file, click on the "CSV File (GitHub)" tab displayed at the top of the terminal. This will open a new tab in you browser and show the full CSV file.  
+
 
 Focussing on some of the available columns, a possible domain description for this dataset is:
 - A movie has an id, title, description, and rating.
