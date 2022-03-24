@@ -2,7 +2,7 @@
 
 Now that the data is loaded, you can query the database using the Cypher Query Language (CQL).  
 
-If you know the Structured Query Language (SQL), you might recognize some CQL clauses. Here is a short explanation of the clauses used in the example queries:
+If you know the Structured Query Language (SQL), you might recognize some CQL clauses. Here is a short explanation of the clauses used in the example queries ("Cypher Query Language - Developer Guides", 2022):
 - `MATCH` is used to search a specific pattern and to select nodes/relationships
 - `RETURN` defines what data should be included in the query result
 - `WHERE` adds a constraint or filter to the query

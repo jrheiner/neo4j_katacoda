@@ -23,15 +23,15 @@ MERGE (movie)-[:LISTED_IN]->(genre);
 
 To understand what the above command does in detail, let's look at the different parts:
 
-1. `LOAD CSV WITH HEADERS FROM 'file:///netflix_titles.csv' AS row` loads the CSV file from the /neo4j/data/ directory in the Docker container and parses the single lines. `AS row` saves the values of a single line in the variable `row` so we can access them in the rest of the query.
+1. `LOAD CSV WITH HEADERS FROM 'file:///netflix_titles.csv' AS row` loads the CSV file from the /neo4j/data/ directory in the Docker container and parses the single lines. `AS row` saves the values of a single line in the variable `row` so we can access them in the rest of the query. ("Cypher Query Language - Developer Guides", 2022)
 
-2. `CREATE (movie:Movie {id: row.show_id, name: row.title})` creates a single node with "Movie" label and sets the properties `name` and `id` using the data from the CSV line. 
+2. `CREATE (movie:Movie {id: row.show_id, name: row.title})` creates a single node with "Movie" label and sets the properties `name` and `id` using the data from the CSV line.  ("Cypher Query Language - Developer Guides", 2022)
 
-3. `UNWIND split(row.director, ',') as d` splits a string containing multiple directors into single variables. This way, we can create a single node for each director when a single CSV line contains multiple. For example, `"Lilly Wachowski, Lana Wachowski"` is split into `"Lilly Wachowski"` and `"Lana Wachowski"`.
+3. `UNWIND split(row.director, ',') as d` splits a string containing multiple directors into single variables. This way, we can create a single node for each director when a single CSV line contains multiple. For example, `"Lilly Wachowski, Lana Wachowski"` is split into `"Lilly Wachowski"` and `"Lana Wachowski"`. ("Cypher Query Language - Developer Guides", 2022)
 
-4. `MERGE (director:Person {name: d})` creates a node with the "Person" label. However, different to the `CREATE`, `MERGE` checks if the node already exists. For instance, if the same person directs two movies, we only want to add a single node for that person. This is why `MERGE` is used here instead of `CREATE`.
+4. `MERGE (director:Person {name: d})` creates a node with the "Person" label. However, different to the `CREATE`, `MERGE` checks if the node already exists. For instance, if the same person directs two movies, we only want to add a single node for that person. This is why `MERGE` is used here instead of `CREATE`. ("Cypher Query Language - Developer Guides", 2022)
 
-5. `MERGE (director)-[:DIRECTED]->(movie)` creates a relationship between a single director node and the movie node that was created in bullet point 2. Like before, we use the `MERGE` command to only create the relationship if it does not exist. Therefore, we avoid duplicate relationships representing the same information.
+5. `MERGE (director)-[:DIRECTED]->(movie)` creates a relationship between a single director node and the movie node that was created in bullet point 2. Like before, we use the `MERGE` command to only create the relationship if it does not exist. Therefore, we avoid duplicate relationships representing the same information. ("Cypher Query Language - Developer Guides", 2022)
 
 The commands from 3, 4, and 5 are repeated to add nodes and relationships for all actors and genres of a movie. This is done for each line in the CSV file.
 

@@ -23,7 +23,8 @@ However, while the query returns five movies that share genres with "The Matrix"
 
 
 ## 2. Using Graph algorithms
-*Adamic Adar* is a graph algorithm that introduces a measure used to compute the closeness of nodes based on their shared neighbors. https://neo4j.com/docs/graph-data-science/current/alpha-algorithms/adamic-adar/  
+*Adamic Adar* is a graph algorithm that introduces a measure used to compute the closeness of nodes based on their shared neighbors. A value of 0 indicates that two nodes are not close, while higher values indicate nodes are closer. ("Adamic Adar - Neo4j Graph Data Science", 2022; Adamic & Adar, 2003)
+
 
 Using the graph algorithm, we can query the top 5 "closest" nodes to the "The Matrix" movie node.
 ```

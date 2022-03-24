@@ -11,6 +11,24 @@ Below you can find a list of all sources, references, and literature. This is al
 
 ## References and Literature
 
-**TODO** mind. 3, nicht nur Websites/Blogs/etc auch Bücher und Zeitschriften
+Adamic Adar - Neo4j Graph Data Science. (2022). Retrieved 24 March 2022, from https://neo4j.com/docs/graph-data-science/current/alpha-algorithms/adamic-adar/
+
+Adamic, L., & Adar, E. (2003). Friends and neighbors on the Web. Social Networks, 25(3), 211-230. doi: 10.1016/S0378-8733(03)00009-1
+
+Bansal, S. (2022). Netflix Movies and TV Shows. Retrieved 24 March 2022, from https://www.kaggle.com/shivamb/netflix-shows
+
+Claudel, Y. (2020). Analyze netflix data using graphs (neo4j). Retrieved 24 March 2022, from https://www.kaggle.com/code/yclaudel/analyze-netflix-data-using-graphs-neo4j/notebook
+
+Cypher Query Language - Developer Guides. (2022). Retrieved 24 March 2022, from https://neo4j.com/developer/cypher/
+
+Robinson, I., Webber, J., & Eifrem, E. (2015). Graph databases (2nd ed.). Beijing: O'Reilly.
+
+What is a Graph Database? - Developer Guides. (2022). Retrieved 24 March 2022, from https://neo4j.com/developer/graph-database/
+
+### Images
+
+Modeling Designs - Developer Guides. (2022). Retrieved 24 March 2022, from https://neo4j.com/developer/modeling-designs/
+
+Graph Modeling Guidelines - Developer Guides. (2022). Retrieved 24 March 2022, from https://neo4j.com/developer/guide-data-modeling/
 
 
