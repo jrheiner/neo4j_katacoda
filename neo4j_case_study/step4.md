@@ -1,4 +1,5 @@
 # Importing data from a CSV file
+Now that the Neo4j database is running, you can import the dataset with the graph data model created in step 2.  
 
 To import the dataset into the database, execute the following command. Don't worry, the command is explained on this page. But since the data import takes a few minutes to fully complete, you should start it now and then continue reading below.
 
