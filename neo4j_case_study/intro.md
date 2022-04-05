@@ -14,12 +14,3 @@ This case study is inspired by my Netflix homepage, which offers a recommendatio
 Furthermore, this also shows how user data can be utilized. In general, data is becoming increasingly important in all kinds of applications. This trend is also accepted among well-known industry figures, as shown by the following slide of the Datawarehouse Lecture ("DWH01-IntroDefinition", Slide 5). Everyone agrees that data is incredibly valuable: 
 ![Datawarehouse slide quotes](./assets/lecture_data_quotes.png) 
 Image: (Buckenhofer, 2022)
-
-# TODOS
-**TODO**: Bezug zur Vorlesung 5% Wurde ein Bezug zur Vorlesung hergestellt und passend in die Dokumentation integriert? Beispiele wie ein Bezug hergestellt werden kann: - Screenshot einer Folie - Zitat einer Folie? (ein Bezug innerhalb der Arbeit genügt: 1 Screenshot oder 1 Zitat + vollständige Quellenangabe)
-
-**TODO**: Literaturauswahl 5% Werden alle im Text benutzten Quellen vollständig und korrekt im Literaturverzeichnis genannt? Wird qualitativ angemessene Literatur herangezogen (z.B. nur Blogs oder auch Zeitschriften und Bücher)?  
-Richtwert: >=3 Quellen
-
-
-**TODO**: Bilder, Code, etc im Text erklären

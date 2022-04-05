@@ -29,8 +29,7 @@ RETURN movie.name, relationship, node.name
 ORDER BY type(relationship);
 ```{{execute}}
 The output of this query is probably confusing in the terminal. This is because the output is a graph and can not be visualized in the command line. Here is how the output looks using the Neo4j Browser User Interface:
-
-# TODO INSERT IMAGE OF GRAPH VISUALIZATION
+![The Matrix nodes](./assets/the_matrix_nodes.png) 
 
 
 Which Person has directed the most movies?
