@@ -18,7 +18,7 @@ To check how many nodes of each label there are, you can execute the following c
 ```
 MATCH (n) RETURN count(labels(n)), labels(n);
 ```{{execute}}
-
+The database should contain 5990 movie nodes, 29792 unique persons (actors and directors), and 20 different genres.
 
 
 Get information about the movie "The Matrix":  
@@ -35,8 +35,8 @@ The output of this query is probably confusing in the terminal. This is because 
 Which Person has directed the most movies?
 ```
 MATCH (director:Person)-[rel:DIRECTED]->(m:Movie)
-WITH director, count(m) as total_movies, collect(m.id) as reference_list
-RETURN director.name, total_movies, reference_list
+WITH director, count(m) as total_movies
+RETURN director.name, total_movies
 ORDER BY total_movies DESC
 LIMIT 5;
 ```{{execute}}

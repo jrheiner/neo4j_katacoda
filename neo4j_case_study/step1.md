@@ -2,7 +2,7 @@
 
 In Neo4j data is represented as labeled property graph. An example of such a graph is given the image below. ("What is a Graph Database? - Developer Guides", 2022)
 
-![Modeling the movie genre as property](./assets/property_graph_elements.jpg) Image: ("Graph Modeling Guidelines - Developer Guides", 2022)
+![Modeling the movie genre as property](./assets/property_graph_elements.jpg) *Image: ("Graph Modeling Guidelines - Developer Guides", 2022)*
 
 The graph in the image consists of:
 - Labels:
