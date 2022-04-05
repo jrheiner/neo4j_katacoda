@@ -8,7 +8,7 @@ You can see all the included information by looking at the column headers of the
 `head -n 1 data/netflix_titles.csv`{{execute}}  
 
 
-To view the whole file, click on the "CSV File (GitHub)" tab displayed at the top of the terminal. This will open a new tab in you browser and show the full CSV file.  
+To view the whole file, click on the "CSV File (GitHub)" tab displayed at the top of the terminal. This will open a new tab in your browser and show the entire CSV file.  
 
 
 Focussing on some of the available columns, a possible domain description for this dataset is:
@@ -37,6 +37,6 @@ When designing the data model, an important decision is deciding between modelin
 ![Modeling the movie genre as property](./assets/modeling_genre_property.jpg)
 ![Modeling the movie genre as node and relationship](./assets/modeling_genre_node.jpg)  Images: ("Modeling Designs - Developer Guides", 2022)
 
-Both models are valid and the decision strongly depends on the intended usage o the database. In general, modeling  everything as either property or relation is most likely never the best way. Ideally, the graph data model utilizes both to fully take advantage of the benefits of Neo4j. ("Modeling Designs - Developer Guides", 2022)
+Both models are valid, and the decision depends on the intended usage of the database. In general, modeling everything as either property or relation is most likely never the best way. Ideally, the graph data model utilizes both to fully take advantage of the benefits of Neo4j. ("Modeling Designs - Developer Guides", 2022)
 
-In this scenario, the genre is modeled as a relationship because it simplifies the queries presented in the final steps. Furthermore, suppose multiple movies are listed in the genre "Action". In that case, "action movie" nodes can all have a relationship with the single genre node "Action". As result, you can simply query all "action movies" by returning all nodes that have a relationship with the "Action" genre node instead of checking the properties of every single movie node.
+In this scenario, the genre is modeled as a relationship because it simplifies the queries presented in the final steps. Furthermore, suppose multiple movies are listed in the genre "Action". In that case, "action movie" nodes can all have a relationship with the single genre node "Action". As a result, you can simply query all "action movies" by returning all nodes that have a relationship with the "Action" genre node instead of checking the properties of every single movie node.

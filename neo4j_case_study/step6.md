@@ -17,7 +17,7 @@ RETURN the_matrix.name as Source, recommendation.name as Recommendation, shared_
 LIMIT 5;
 ```{{execute}}
 
-However, while the query returns five movies that share genres with "The Matrix", there is no way to order the recommendations. Some movies might be more relevant than others. Finally, the recommendations do not include the sequel movies "The Matrix Reloaded" and "The Matrix Revolutions" which seem like an obvious choice.
+However, while the query returns five movies that share genres with "The Matrix", there is no way to order the recommendations. Some movies might be more relevant than others. Finally, the recommendations do not include the sequel movies "The Matrix Reloaded" and "The Matrix Revolutions" which seem like obvious choices.
 
 
 ## 2. Using Graph algorithms
@@ -33,7 +33,7 @@ RETURN matrix.name as Source, recommendation.name as Recommendation, gds.alpha.l
 ORDER BY closeness_score DESC
 LIMIT 5;
 ```{{execute}}
-This result seems very promising. Unsurprisingly, the sequel movies are among the clostest nodes. This makes sense because they share a lot of genre, actor, and director nodes.
+This result seems very promising. Unsurprisingly, the sequel movies are among the closest nodes. This makes sense because they share a lot of genres, actor, and director nodes.
 
 Obviously, the query is not limited to "The Matrix" but works with any movie in the dataset. Using the same query except changing the movie to "Rocky", returns recommendations based on the "Rocky" movie. Once again, the sequels are among the closest nodes. Try it with the command below:
 ```

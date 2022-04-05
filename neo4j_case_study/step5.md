@@ -28,7 +28,7 @@ WHERE movie.name = "The Matrix"
 RETURN movie.name, relationship, node.name
 ORDER BY type(relationship);
 ```{{execute}}
-The output of this query is probably confusing in the terminal. This is because the output is a graph and can not be visualized in the command line. Here is how the output looks using the Neo4j Browser User Interface:
+The output of this query is probably confusing in the terminal. The output can also be visualized as a graph. Here is how the output looks using the Neo4j Browser User Interface:
 ![The Matrix nodes](./assets/the_matrix_nodes.png) 
 
 
@@ -41,4 +41,5 @@ ORDER BY total_movies DESC
 LIMIT 5;
 ```{{execute}}
 
-If you want to know more about the syntax of CQL and learn how to write your own queries, you check the official neo4j documentation [here](https://neo4j.com/developer/cypher/).
+
+Continue to the next step to find out how to query for movie recommendations.

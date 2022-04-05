@@ -1,6 +1,6 @@
 # Neo4j Graph Model
 
-In Neo4j data is represented as labeled property graph. An example of such a graph is given the image below. ("What is a Graph Database? - Developer Guides", 2022)
+In Neo4j, data is represented as a labeled property graph. An example of such a graph is given in the image below. ("What is a Graph Database? - Developer Guides", 2022)
 
 ![Modeling the movie genre as property](./assets/property_graph_elements.jpg) *Image: ("Graph Modeling Guidelines - Developer Guides", 2022)*
 
@@ -22,7 +22,7 @@ In general, a graph model has the following characteristics (Robinson et al., 20
 - It contains nodes and relationships.
 - Nodes contain properties (key-value pairs).
 - Nodes can be labeled with one or more labels.
-- Relationships are named and directed, and always have a start and end node.
+- Relationships are named, directed, and always have a start and end node.
 - Relationships can also contain properties.
 
 
