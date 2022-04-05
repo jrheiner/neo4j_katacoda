@@ -6,7 +6,7 @@ docker run -d --name neo4j_games -v ~/data:/import --env NEO4J_AUTH=neo4j/kataco
 docker exec -it neo4j_games bash
 ```{{execute}}
 
-This starts a container with the `neo4j` image and automatically installs the `graph-data-science` plugin. The plugin will be used later on to utilize a graph algortihm. The parameter `-v ~/data:/import` mounts a volume so that the dataset file can be accessed within the container. `--env` sets environment variables.
+This starts a container with the `neo4j` image and automatically installs the `graph-data-science` plugin. The plugin will be used later on to utilize a graph algorithm. The parameter `-v ~/data:/import` mounts a volume so that the dataset file can be accessed within the container. `--env` sets environment variables.
 
 If you see the prompt `root@...:/var/lib/neo4j#` in the terminal you can proceed with the command below.
 `cypher-shell -u neo4j -p katacoda`{{execute}}  

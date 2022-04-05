@@ -1,4 +1,4 @@
-Thank you for completing this scenario about Neo4j.
+## Thank you for completing this scenario about Neo4j.
 
 Here is a quick summary of what you learned in this scenario:
 - How to design a graph data model based on existing data

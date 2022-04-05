@@ -14,16 +14,14 @@ MATCH (the_matrix:Movie {name: "The Matrix"})-[:LISTED_IN]->(genre:Genre)<-[:LIS
 WHERE the_matrix <> recommendation 
 WITH DISTINCT the_matrix, recommendation, collect(DISTINCT genre.name) as shared_genres
 RETURN the_matrix.name as Source, recommendation.name as Recommendation, shared_genres
-
 LIMIT 5;
 ```{{execute}}
-ORDER BY size(shared_genres) DESC  
 
 However, while the query returns five movies that share genres with "The Matrix", there is no way to order the recommendations. Some movies might be more relevant than others. Finally, the recommendations do not include the sequel movies "The Matrix Reloaded" and "The Matrix Revolutions" which seem like an obvious choice.
 
 
 ## 2. Using Graph algorithms
-*Adamic Adar* is a graph algorithm that introduces a measure used to compute the closeness of nodes based on their shared neighbors. A value of 0 indicates that two nodes are not close, while higher values indicate nodes are closer. ("Adamic Adar - Neo4j Graph Data Science", 2022; Adamic & Adar, 2003)
+*Adamic Adar* is a graph algorithm that introduces a measure used to compute the closeness of nodes based on their shared neighbors. A value of zero indicates that two nodes are not close, while higher values indicate nodes are closer. ("Adamic Adar - Neo4j Graph Data Science", 2022; Adamic & Adar, 2003)
 
 
 Using the graph algorithm, we can query the top 5 "closest" nodes to the "The Matrix" movie node. (Claudel, 2020)

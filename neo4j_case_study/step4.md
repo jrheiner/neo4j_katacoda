@@ -1,7 +1,7 @@
 # Importing data from a CSV file
 Now that the Neo4j database is running, you can import the dataset with the graph data model created in step 2.  
 
-To import the dataset into the database, execute the following command. Don't worry, the command is explained on this page. But since the data import takes a few minutes to fully complete, you should start it now and then continue reading below.
+To import the dataset into the database, execute the following command. Don't worry, the command is explained on this page. But since the data import can take a moment to fully complete, you should start it now and then continue reading below.
 
 ```
 CREATE CONSTRAINT personNameConstraint FOR (person:Person) REQUIRE person.name IS UNIQUE;
@@ -25,7 +25,7 @@ MERGE (movie)-[:LISTED_IN]->(genre);
 
 To understand what the above command does in detail, let's look at the different parts:
 
-1. `CREATE CONSTRAINT` creates a constraint that ensures that every node with the person label (actors and directors) will have a unique name property. It also implicitly creates an index. By indexing the name property, node lookup (e.g. used done MERGE) will be much faster. As a result the import is significantly faster.
+1. `CREATE CONSTRAINT` creates a constraint that ensures that every node with the person label (actors and directors) will have a unique name property. It also implicitly creates an index. By indexing the name property, node lookup (e.g. MERGE) will be much faster. As a result the import is significantly faster.
 
 2. `LOAD CSV WITH HEADERS FROM 'file:///netflix_titles.csv' AS row` loads the CSV file from the /neo4j/data/ directory in the Docker container and parses the single lines. `AS row` saves the values of a single line in the variable `row` so we can access them in the rest of the query. ("Cypher Query Language - Developer Guides", 2022)
 
